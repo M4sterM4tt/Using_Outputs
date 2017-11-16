@@ -1,15 +1,16 @@
-$(document).on("pagecreate","#pageone",function(){
-  $('#submitButton').on("click", function(){
-    submitText();
-  });            
+
+$(document).on("pagecreate","#pageone",function(){   
+  $('#submitButton').on("click", buttonClicked);       
 });            
 
 
-function submitText() {
-	var text = $('#textinput').val();
-	alert(text);
+function buttonClicked() {
+    var randomresult = random();
+    document.getElementById("Output").innerHTML = randomresult;
 }
 
-function storeValue(key, value) {
-	//add some code to store the key-value pair in persistant storage 
+
+function random() {
+	return !Math.round(Math.random());  
 }
+
