@@ -7,10 +7,11 @@ $(document).on("pagecreate","#pageone",function(){
 function buttonClicked() {
     var randomresult = random();
     document.getElementById("Output").innerHTML = randomresult;
-    if (randomresult == "true"){
+    if (document.getElementById("Output").innerHTML == "true"){
+        alert("hi");
         navigator.notification.beep(1); 
     }
-    if (randomresult == "false"){
+    if (document.getElementById("Output").innerHTML == "false"){
         navigator.notification.beep(2); 
     }
 }
@@ -19,6 +20,5 @@ function buttonClicked() {
 function random() {
 	return !Math.round(Math.random());  
 }
-
 
 
