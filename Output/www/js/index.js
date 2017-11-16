@@ -7,7 +7,7 @@ $(document).on("pagecreate","#pageone",function(){
 function buttonClicked() {
     var randomresult = random();
     document.getElementById("Output").innerHTML = randomresult;
-    navigator.notification.beep(1);
+    var beepresult = beep();
 }
 
 
@@ -15,3 +15,12 @@ function random() {
 	return !Math.round(Math.random());  
 }
 
+
+function beep() {
+	if (randomresult == "true"){
+        navigator.notification.beep(1); 
+    }
+    if (randomresult == "false"){
+        navigator.notification.beep(2); 
+    }
+}
