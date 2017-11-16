@@ -7,7 +7,12 @@ $(document).on("pagecreate","#pageone",function(){
 function buttonClicked() {
     var randomresult = random();
     document.getElementById("Output").innerHTML = randomresult;
-    var beepresult = beep();
+    if (randomresult == "true"){
+        navigator.notification.beep(1); 
+    }
+    if (randomresult == "false"){
+        navigator.notification.beep(2); 
+    }
 }
 
 
@@ -16,11 +21,4 @@ function random() {
 }
 
 
-function beep() {
-	if (randomresult == "true"){
-        navigator.notification.beep(1); 
-    }
-    if (randomresult == "false"){
-        navigator.notification.beep(2); 
-    }
-}
+
